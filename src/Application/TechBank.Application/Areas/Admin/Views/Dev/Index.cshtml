@@ -1,0 +1,36 @@
+﻿@model DevIndexVM
+@{
+    ViewBag.Title = "Developer's Advanced Configuration";
+}
+
+<h1 class="page-header">@ViewBag.Title</h1>
+
+<div class="row">
+    <h2>Application</h2>
+    <ul>
+        <li>Version: <span style="font-weight:bold">@Model.Version</span></li>
+        <li>ngrok: <span style="font-weight:bold">ngrok http @Model.Port -host-header="localhost:@Model.Port" -subdomain="techbank"</span></li>        
+    </ul>
+
+    <h2>Database</h2>
+    <ul>
+        <li>Servidor: <span style="font-weight:bold">@Model.Server</span></li>
+        <li>Nombre: <span style="font-weight:bold">@Model.Database</span></li>
+    </ul>
+    <code>
+        <system.web>
+            <customerrors mode="Off" />
+            <trust level="Full" />
+        </system.web>
+    </code>
+
+    <h4>Private Settings</h4>
+    <ul>        
+    </ul>
+
+    <h2>Database actions</h2>
+    <div class="form-group">        
+        <a class="btn btn-primary" role="button" href="~/Dev/Seed">Seed Database</a>        
+        <a class="btn btn-danger" role="button" href="~/Admin/Dev/DropSchema">Drop Schema</a>
+    </div>
+</div>
